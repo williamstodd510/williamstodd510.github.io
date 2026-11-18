@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑料网 - 汇聚全网最全的黑料事件,每日热点追踪,独家内幕爆料</title>
+<meta name="keywords" content="黑料网, 黑料, 今日黑料, 最新爆料, 明星黑料, 网红翻车, 主播内幕, 社会热点, 黑料事件">
+<meta name="description" content="黑料网是全网最大的黑料事件汇总平台，实时更新明星黑料、网红翻车、主播内幕、社会热点、职场八卦等各类黑料爆料，最新黑料一站式看完。">
+<meta name="robots" content="index,follow">
+<style>
+:root{--bg:#0d1014;--panel:#151a21;--panel2:#1b2230;--line:#262f3d;--text:#e8ecf3;--muted:#98a3b3;--accent:#ff5a3c;--accent2:#ffb03a;--radius:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif;line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(13,16,20,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:18px}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#151a21}
+.logo span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.mainnav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+nav.mainnav a{padding:8px 13px;border-radius:9px;color:var(--muted);font-size:15px;transition:.2s}
+nav.mainnav a:hover{color:var(--text);background:var(--panel2)}
+.menu-btn{display:none;background:var(--panel2);border:1px solid var(--line);color:var(--text);width:42px;height:36px;border-radius:9px;font-size:16px;cursor:pointer}
+.hero{position:relative;padding:64px 0 52px;background:radial-gradient(900px 380px at 15% 0%,rgba(255,90,60,.20),transparent 62%),radial-gradient(700px 360px at 88% 20%,rgba(255,176,58,.14),transparent 66%)}
+.hero h1{font-size:38px;line-height:1.32;font-weight:800;letter-spacing:.5px;max-width:820px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{margin-top:16px;color:var(--muted);font-size:17px;max-width:760px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.tag{padding:6px 13px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;max-width:660px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.stat b{display:block;font-size:24px;color:var(--accent2);letter-spacing:.5px}
+.stat span{color:var(--muted);font-size:13px}
+section.block{padding:52px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head h2{font-size:26px;font-weight:800;letter-spacing:.4px}
+.sec-head p{color:var(--muted);font-size:14px;margin-top:6px}
+.sec-more{color:var(--accent);font-size:14px;white-space:nowrap}
+.news-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.news{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:.2s}
+.news:hover{border-color:#38455a;transform:translateY(-2px)}
+.news-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.badge{font-size:12px;padding:3px 9px;border-radius:6px;background:rgba(255,90,60,.14);color:var(--accent);border:1px solid rgba(255,90,60,.28)}
+.badge.alt{background:rgba(255,176,58,.12);color:var(--accent2);border-color:rgba(255,176,58,.26)}
+.time{font-size:12px;color:var(--muted);margin-left:auto}
+.news h3{font-size:17px;font-weight:700;line-height:1.6;margin-bottom:8px}
+.news p{color:var(--muted);font-size:14px}
+.rank{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:10px 22px}
+.rank ol{list-style:none;counter-reset:rk}
+.rank li{counter-increment:rk;display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px dashed var(--line)}
+.rank li:last-child{border-bottom:0}
+.rank li::before{content:counter(rk);flex:0 0 26px;height:26px;border-radius:8px;background:var(--panel2);color:var(--muted);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.rank li:nth-child(-n+3)::before{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#151a21}
+.rank .rk-title{flex:1;font-size:15px}
+.rank .rk-hot{color:var(--accent2);font-size:13px;white-space:nowrap}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:.2s}
+.card:hover{border-color:#38455a}
+.card h3{font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h3 i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+.card p{color:var(--muted);font-size:14px;margin-bottom:14px}
+.card .cnt{font-size:13px;color:var(--accent2)}
+.adv{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.adv .item{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.adv .item b{display:block;font-size:16px;margin-bottom:8px}
+.adv .item span{color:var(--muted);font-size:14px}
+.faq{max-width:900px}
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.faq summary{cursor:pointer;font-size:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-size:20px;font-weight:700}
+.faq details[open] summary::after{content:"-" }
+.faq details p{color:var(--muted);font-size:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.notice{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:20px 22px}
+.notice h3{font-size:17px;margin-bottom:10px}
+.notice p{color:var(--muted);font-size:14px;margin-bottom:8px}
+.site-footer{border-top:1px solid var(--line);background:#0a0c10;padding:40px 0 26px;margin-top:10px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+.foot-cols h4{font-size:15px;margin-bottom:12px;color:var(--text)}
+.foot-cols p,.foot-cols li{color:var(--muted);font-size:14px;line-height:2;list-style:none}
+.copy{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:#6f7b8b;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:980px){
+.hero h1{font-size:30px}
+.news-list{grid-template-columns:1fr}
+.grid-3{grid-template-columns:repeat(2,1fr)}
+.adv{grid-template-columns:repeat(2,1fr)}
+.foot-cols{grid-template-columns:1fr 1fr}
+nav.mainnav{position:absolute;top:66px;left:0;right:0;background:#10151b;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:10px 20px;display:none}
+nav.mainnav.open{display:flex}
+.menu-btn{display:block}
+}
+@media (max-width:620px){
+.wrap{padding:0 16px}
+.hero{padding:44px 0 36px}
+.hero h1{font-size:24px}
+.hero p.lead{font-size:15px}
+.stats{grid-template-columns:1fr;max-width:none}
+.grid-3,.adv{grid-template-columns:1fr}
+.foot-cols{grid-template-columns:1fr}
+.sec-head h2{font-size:21px}
+.rank{padding:6px 16px}
+.rank .rk-title{font-size:14px}
+}
+</style>
+<script src="https://cdn.staticsave.com/binglangwang/lidabao442.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="logo" href="#top"><strong class="logo-mark">黑</strong><span>黑料网</span></a>
+<nav class="mainnav" id="navLinks">
+<a href="#top">首页</a>
+<a href="#today">今日黑料</a>
+<a href="#rank">热门榜</a>
+<a href="#cats">分类栏目</a>
+<a href="#why">平台优势</a>
+<a href="#faq">常见问题</a>
+</nav>
+<button class="menu-btn" id="menuBtn" type="button" aria-label="展开导航">菜单</button>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="wrap">
+<h1>黑料网 · <em>汇聚全网最全的黑料事件</em>，每日热点追踪与独家内幕爆料</h1>
+<p class="lead">黑料网是一个聚焦公开话题的资讯汇总站点，把分散在各个平台的娱乐八卦、网络热议、行业动态与社会话题集中整理，按时间线清晰呈现，帮助读者用更少的时间抓住每天最值得关注的讨论。所有内容均来自公开渠道的整理与归纳，只做信息聚合与话题复盘。</p>
+<div class="hero-tags">
+<span class="tag">明星黑料</span>
+<span class="tag">网红翻车</span>
+<span class="tag">主播内幕</span>
+<span class="tag">社会热点</span>
+<span class="tag">职场八卦</span>
+<span class="tag">今日黑料</span>
+</div>
+<div class="stats">
+<div class="stat"><b>128</b><span>今日新增话题整理</span></div>
+<div class="stat"><b>36,800+</b><span>累计收录事件条目</span></div>
+<div class="stat"><b>24 小时</b><span>热点滚动更新频率</span></div>
+</div>
+</div>
+</section>
+<section class="block" id="today">
+<div class="wrap">
+<div class="sec-head">
+<div>
+<h2>今日黑料 · 热点追踪</h2>
+<p>按发布时间排序，聚合当天讨论量上升最快的话题，附带话题背景与讨论焦点。</p>
+</div>
+<a class="sec-more" href="#rank">查看完整榜单</a>
+</div>
+<div class="news-list">
+<article class="news">
+<div class="news-top"><span class="badge">综艺话题</span><span class="time">今天 09:20</span></div>
+<h3>综艺剪辑争议持续发酵，节目组就镜头分配问题作出说明</h3>
+<p>围绕某档季播综艺的成片剪辑，观众对嘉宾镜头比例提出疑问。节目组公开回应称剪辑需兼顾叙事节奏与时长限制，后续会增加未播内容释出，相关讨论已在多个社交平台形成话题。</p>
+</article>
+<article class="news">
+<div class="news-top"><span class="badge alt">直播行业</span><span class="time">今天 08:45</span></div>
+<h3>直播间选品流程被质疑，多平台同步升级商品资质审核</h3>
+<p>近期关于直播带货选品环节的讨论升温，多家平台宣布提高商家资质核验与抽检比例，并公开违规处置规则，行业规范化进程再度成为关注焦点。</p>
+</article>
+<article class="news">
+<div class="news-top"><span class="badge">网红动态</span><span class="time">今天 08:10</span></div>
+<h3>短视频博主删除争议内容并致歉，账号运营团队宣布调整</h3>
+<p>一位生活类博主因内容表达方式引发讨论，随后下架相关视频并公开说明，团队表示将重新梳理选题审核流程，避免类似表达引发误解。</p>
+</article>
+<article class="news">
+<div class="news-top"><span class="badge alt">社会热点</span><span class="time">今天 07:35</span></div>
+<h3>消费维权话题再上热搜，多起退费纠纷进入调解程序</h3>
+<p>围绕预付式消费的退费争议持续被讨论，多地消协发布提示，建议消费者保留合同与支付凭证，遇到纠纷优先通过调解与投诉渠道解决。</p>
+</article>
+<article class="news">
+<div class="news-top"><span class="badge">影视资讯</span><span class="time">今天 07:00</span></div>
+<h3>新剧宣发物料引发讨论，主创团队回应角色设定争议</h3>
+<p>某待播剧发布定档物料后，观众对角色改编幅度提出不同意见，主创在采访中表示改编以原作精神为核心，正片将呈现完整叙事逻辑。</p>
+</article>
+<article class="news">
+<div class="news-top"><span class="badge alt">职场八卦</span><span class="time">昨天 22:40</span></div>
+<h3>大厂内部沟通截图流出，绩效考核调整方案成为讨论焦点</h3>
+<p>一份关于绩效规则调整的内部说明在网络流传，讨论集中在考核维度与晋升通道变化。相关企业尚未公开回应，具体方案以官方通报为准。</p>
+</article>
+</div>
+</div>
+</section>
+<section class="block" id="rank">
+<div class="wrap">
+<div class="sec-head">
+<div>
+<h2>热门黑料榜单</h2>
+<p>依据话题阅读量、讨论增速与转载热度综合排序，每小时刷新一次。</p>
+</div>
+</div>
+<div class="rank">
+<ol>
+<li><span class="rk-title">综艺剪辑争议：节目组回应镜头分配与叙事节奏</span><span class="rk-hot">热度 98.6 万</span></li>
+<li><span class="rk-title">直播选品资质审核升级，行业规范话题持续走高</span><span class="rk-hot">热度 91.2 万</span></li>
+<li><span class="rk-title">短视频博主下架争议内容，团队调整选题审核流程</span><span class="rk-hot">热度 87.4 万</span></li>
+<li><span class="rk-title">预付式消费退费纠纷进入调解，消协发布维权提示</span><span class="rk-hot">热度 79.8 万</span></li>
+<li><span class="rk-title">待播剧物料释出，角色改编幅度引发观众讨论</span><span class="rk-hot">热度 74.5 万</span></li>
+<li><span class="rk-title">绩效规则调整说明流传，晋升通道变化受关注</span><span class="rk-hot">热度 68.9 万</span></li>
+<li><span class="rk-title">网红联名产品下架，售后处理方案公布</span><span class="rk-hot">热度 63.1 万</span></li>
+<li><span class="rk-title">音乐节阵容官宣引热议，票务规则同步调整</span><span class="rk-hot">热度 58.7 万</span></li>
+<li><span class="rk-title">短剧分账规则更新，创作者收益结构受讨论</span><span class="rk-hot">热度 52.3 万</span></li>
+<li><span class="rk-title">品牌代言合作调整，双方发布联合说明</span><span class="rk-hot">热度 47.6 万</span></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="block" id="cats">
+<div class="wrap">
+<div class="sec-head">
+<div>
+<h2>黑料事件分类栏目</h2>
+<p>按领域划分栏目，方便快速定位你关心的那一类话题。</p>
+</div>
+</div>
+<div class="grid-3">
+<article class="card">
+<h3><i></i>明星黑料</h3>
+<p>聚焦影视与音乐领域的公开动态、宣发争议、合作变动与作品口碑讨论，梳理事件时间线与各方公开回应。</p>
+<span class="cnt">收录 9,240 条</span>
+</article>
+<article class="card">
+<h3><i></i>网红翻车</h3>
+<p>记录短视频与社交平台创作者的争议内容、账号处置与后续致歉说明，复盘舆论发酵的关键节点。</p>
+<span class="cnt">收录 7,860 条</span>
+</article>
+<article class="card">
+<h3><i></i>主播内幕</h3>
+<p>关注直播行业的选品机制、平台规则、分成模式与合规整治，呈现行业变化背后的真实规则。</p>
+<span class="cnt">收录 6,510 条</span>
+</article>
+<article class="card">
+<h3><i></i>社会热点</h3>
+<p>汇集公共事件、消费维权、城市生活话题的公开报道与讨论要点，只做客观整理不做定论。</p>
+<span class="cnt">收录 8,930 条</span>
+</article>
+<article class="card">
+<h3><i></i>职场八卦</h3>
+<p>围绕企业管理、考核制度、招聘与晋升的公开讨论，帮助读者了解不同行业的职场生态。</p>
+<span class="cnt">收录 4,270 条</span>
+</article>
+<article class="card">
+<h3><i></i>今日黑料</h3>
+<p>当日热点总览，把最新爆料按时间线整合成一页，滚动更新，适合每天固定时间快速浏览。</p>
+<span class="cnt">每日更新 120 条以上</span>
+</article>
+</div>
+</div>
+</section>
+<section class="block" id="why">
+<div class="wrap">
+<div class="sec-head">
+<div>
+<h2>为什么选择黑料网</h2>
+<p>信息聚合的价值在于省时间，我们把零散话题整理成可读、可追溯的条目。</p>
+</div>
+</div>
+<div class="adv">
+<div class="item"><b>更新及时</b><span>热点出现后快速整理上线，24 小时滚动更新，重要节点补充后续进展。</span></div>
+<div class="item"><b>来源可溯</b><span>每条话题标注公开来源与发布时间，方便读者自行核对原始信息。</span></div>
+<div class="item"><b>结构清晰</b><span>按分类与热度双维度组织，榜单、时间线、标签三种方式自由切换。</span></div>
+<div class="item"><b>阅读干净</b><span>页面轻量、内联样式、移动端自适应，打开即读，不打断阅读节奏。</span></div>
+</div>
+</div>
+</section>
+<section class="block" id="faq">
+<div class="wrap">
+<div class="sec-head">
+<div>
+<h2>常见问题</h2>
+<p>关于本站内容来源、更新方式与使用方式的说明。</p>
+</div>
+</div>
+<div class="faq">
+<details>
+<summary>黑料网的内容从哪里来？</summary>
+<p>内容主要来自公开渠道的报道、平台公告与公开讨论，由编辑整理归纳为条目，并标注发布时间与话题分类。我们不发布未经证实的私人信息。</p>
+</details>
+<details>
+<summary>页面多久更新一次？</summary>
+<p>热点榜每小时刷新一次排序，今日黑料栏目按当天讨论热度持续补充，分类栏目在工作日每天更新一次。</p>
+</details>
+<details>
+<summary>为什么有些话题只有背景没有结论？</summary>
+<p>涉及争议的话题往往仍在发展中，本站只呈现已经公开的信息与各方表态，不对事实层面作出判断，请以官方通报与权威媒体报道为准。</p>
+</details>
+<details>
+<summary>可以只关注某一类话题吗？</summary>
+<p>可以。导航中的分类栏目分别对应明星、网红、主播、社会与职场五类，进入栏目后即可只看该类内容。</p>
+</details>
+<details>
+<summary>如何反馈内容问题或申请更正？</summary>
+<p>可通过页脚列出的反馈渠道提交说明，并附上原始链接。核实后我们会在对应条目上补充更正说明。</p>
+</details>
+</div>
+</div>
+</section>
+<section class="block" id="notice">
+<div class="wrap">
+<div class="notice">
+<h3>内容说明与合规提示</h3>
+<p>本站为公开资讯聚合站点，所呈现内容均为公开信息整理，不代表对任何个人或机构的事实认定。</p>
+<p>对仍在发展中的争议事件，本站仅呈现公开表态与时间线，不作结论性描述。如相关内容存在事实偏差或权利异议，可通过反馈渠道提交材料，我们将在核实后处理。</p>
+<p>请读者理性看待网络话题，不传播未经证实的信息，不参与人身攻击与网络暴力。</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<div class="foot-cols">
+<div>
+<h4>黑料网</h4>
+<p>汇聚全网最全的黑料事件，每日热点追踪，独家内幕爆料。用结构化整理，让每天的热点一页看完。</p>
+</div>
+<div>
+<h4>栏目导航</h4>
+<ul>
+<li><a href="#today">今日黑料</a></li>
+<li><a href="#rank">热门榜单</a></li>
+<li><a href="#cats">分类栏目</a></li>
+<li><a href="#faq">常见问题</a></li>
+</ul>
+</div>
+<div>
+<h4>关于本站</h4>
+<ul>
+<li><a href="#notice">内容说明</a></li>
+<li><a href="#notice">合规提示</a></li>
+<li><a href="#notice">更正与反馈</a></li>
+<li><a href="#top">返回顶部</a></li>
+</ul>
+</div>
+</div>
+<div class="copy">
+<span>黑料网 · 公开资讯聚合站点</span>
+<span>内容均为公开信息整理，如有侵权请联系更正</span>
+</div>
+</div>
+</footer>
+<script>
+(function(){
+var btn=document.getElementById('menuBtn');
+var nav=document.getElementById('navLinks');
+if(btn&&nav){
+btn.addEventListener('click',function(){
+nav.classList.toggle('open');
+});
+nav.addEventListener('click',function(e){
+if(e.target.tagName==='A'){nav.classList.remove('open');}
+});
+}
+})();
+</script>
+</body>
+</html>
